@@ -11,7 +11,6 @@ namespace BaiTap02
         static void Main(string[] args)
         {
             SanPham Socola = new Socola();
-            Socola.Nhap();
             Console.ReadLine();
         }
     }
