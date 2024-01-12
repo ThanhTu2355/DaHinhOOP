@@ -11,34 +11,24 @@ namespace BaiTap02
         private double loinhuan;
         //phuong thuc khoi tao
         public Socola() { }
-        public Socola(string tensanpham,double giamua,double loinhuan):base(tensanpham,giamua)
+        public Socola(string tensanpham,double giamua):base(tensanpham,giamua)
         {
-            this.loinhuan = loinhuan;
-        }
-        //property
-        public double LoiNhuan
-        {
-            set { loinhuan = value; }
-            get { return loinhuan; } 
-        }
-        //tinh loi nhuan
-        public double TinhLoiNhuan()
-        {
-            return GiaMua*0.2;
+            loinhuan = GiaMua * 0.2;
         }
         //phuong thuc ghi de
         //tinh gia ban
         public override double TinhGiaBan()
         {
-            return GiaMua + TinhLoiNhuan();
+            return GiaMua + loinhuan;
+        }
+        public override string InChiTiet()
+        {
+            return TenSanPham + " " + TinhGiaBan();
         }
         public override void Nhap()
         {
-            Console.WriteLine(" -- Nhap thong tin Socola : ");
-            Console.Write("Nhap ten san pham : ");
-            string tensp =Console.ReadLine();
-            Console.Write("Nhap gia mua : ");
-            double giamua=double.Parse(Console.ReadLine());
+            base.Nhap();
+            loinhuan = GiaMua * 0.2;
         }
     }
 }

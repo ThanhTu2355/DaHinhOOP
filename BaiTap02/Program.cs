@@ -10,7 +10,9 @@ namespace BaiTap02
     {
         static void Main(string[] args)
         {
-            SanPham Socola = new Socola();
+            QuanLySanPham ql = new QuanLySanPham();
+            ql.Nhap();
+            ql.InChiTiet();
             Console.ReadLine();
         }
     }

@@ -12,44 +12,25 @@ namespace BaiTap02
         private double chiphigiulanh;
         //phuong thuc khoi tao
         public NuocUong() { }
-        public NuocUong(string tensanpham,double giamua,double loinhuan, double chiphigiulanh):base(tensanpham,giamua)
+        public NuocUong(string tensanpham,double giamua):base(tensanpham,giamua)
         {
-            this.loinhuan = loinhuan;
-            this.chiphigiulanh = chiphigiulanh;
-        }
-        //property
-        public double LoiNhuan
-        {
-            set { loinhuan = value; }
-            get { return loinhuan; }
-        }
-        public double ChiPhiGiuLanh
-        {
-            set { chiphigiulanh = value; }
-            get { return chiphigiulanh; }
-        }
-        //tinh loi nhuan
-        public double TinhLoiNhuan()
-        {
-            return GiaMua * 0.15;
-        }
-        //tinh chi phi giu lanh
-        public double TinhChiPhiGiuLanh()
-        {
-            return GiaMua * 0.1;
+            loinhuan = giamua * 0.15;
+            chiphigiulanh = giamua * 0.1;
         }
         //phuong thuc ghi de
         public override double TinhGiaBan()
         {
-            return GiaMua + TinhLoiNhuan() + TinhChiPhiGiuLanh();
+            return GiaMua + loinhuan + chiphigiulanh;
+        }
+        public override string InChiTiet()
+        {
+            return TenSanPham +" "+ TinhGiaBan();
         }
         public override void Nhap()
         {
-            Console.WriteLine(" -- Nhap thong tin Socola : ");
-            Console.Write("Nhap ten san pham : ");
-            string tensp = Console.ReadLine();
-            Console.Write("Nhap gia mua : ");
-            double giamua = double.Parse(Console.ReadLine());
+            base.Nhap();
+            loinhuan = GiaMua * 0.15;
+            chiphigiulanh = GiaMua * 0.1;
         }
     }
 }

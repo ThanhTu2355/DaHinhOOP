@@ -39,6 +39,10 @@ namespace BaiTap02
         }
         public virtual void Nhap()
         {
+            Console.Write("Nhap ten san pham : ");
+            tensanpham = Console.ReadLine();
+            Console.Write("Nhap gia mua : ");
+            giamua = double.Parse(Console.ReadLine());
         }
     }
 }
